@@ -1,5 +1,13 @@
-<h1>新規作成ページ</h1>
+<div class="text-center">
+ <h1>新規作成ページ</h1>   
+</div>
 
-<%= render'form',task:@task %>
 
-<%= link_to '一覧に戻る', tasks_path %> 
+<%= render'form',task:@task %> 
+<div class="row"> 
+  <div class="mb-2 col-md-8 offset-md-2">
+    <div class="text-end">
+      <%= link_to '一覧に戻る', tasks_path, class: "btn btn-secondary" %> 
+    </div>
+  </div>
+</div>
