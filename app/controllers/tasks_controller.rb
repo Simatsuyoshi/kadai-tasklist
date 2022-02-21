@@ -4,12 +4,12 @@ class TasksController < ApplicationController
    before_action :correct_user, only: [:destroy, :show, :edit, :update]
    
     def index
-        @pagy, @tasks = pagy(current_user.tasks.order(id: :desc))
+      @pagy, @tasks = pagy(current_user.tasks.order(id: :desc))
     end
     
     
     def show
-      @task = Task.find(params[:id])
+
     end
     
     def new
@@ -29,11 +29,10 @@ class TasksController < ApplicationController
     end
     
     def edit 
-      @task = Task.find(params[:id])
+
     end
     
     def update 
-      @task = Task.find(params[:id])
       
       if @task.update(task_params)
         flash[:success] = 'タスクが更新されました'
@@ -45,7 +44,6 @@ class TasksController < ApplicationController
     end
     
     def destroy
-      @task = Task.find(params[:id])
       @task.destroy
       
       flash[:success] = 'タスクを削除しました'
